@@ -1,0 +1,337 @@
+/* Paleta de cores, fontes e transições globais */
+:root {
+  --clr-bg-start: #0D1B2A;
+  --clr-bg-end:   #1B263B;
+  --clr-primary:  #F76C6C;
+  --clr-accent:   #64FFDA;
+  --clr-light:    rgba(255,255,255,0.15);
+  --ff-base:      'Poppins', sans-serif;
+  --transition:   0.3s ease;
+}
+
+/* Reset de margens, paddings e box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+/* Suaviza rolagem e compensa altura do header nos anchors */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Fonte padrão, cor de fundo e texto, previne scroll horizontal */
+body {
+  font-family: var(--ff-base);
+  background: #0D1B2A; /* Fundo igual ao hero */
+  color: #E0E0E0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Limita largura máxima e centraliza conteúdo */
+.container {
+  width: 90%; max-width: 1100px;
+  margin: 0 auto; padding: 1rem 0;
+}
+
+/* Header fixo no topo, com fundo translúcido */
+.header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(13,52,97,0.95);
+}
+
+/* Navbar centralizada e altura fixa */
+.nav {
+  display: flex; align-items: center; justify-content: center;
+  height: 64px; position: relative;
+}
+
+/* Lista de links do menu, horizontal no desktop */
+.nav-list {
+  display: flex; gap: 2rem; list-style: none;
+}
+
+/* Links do menu: cor, peso e efeito de transição */
+.nav-list a {
+  color: #fff; font-weight: 600; text-decoration: none;
+  position: relative; transition: color var(--transition);
+}
+
+/* Linha animada abaixo do link ao passar o mouse */
+.nav-list a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--clr-primary);
+  transition: width var(--transition);
+}
+
+/* Cor do link ao hover/focus */
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-primary);
+}
+.nav-list a:hover::after,
+.nav-list a:focus::after {
+  width: 100%;
+}
+
+/* Link de repositório destacado */
+.repo-link {
+  color: var(--clr-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+.repo-link:hover,
+.repo-link:focus {
+  color: var(--clr-primary);
+}
+
+/* Botão hamburger escondido no desktop, aparece no mobile */
+.hamburger {
+  display: none; position: absolute; left: 1rem;
+  background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; z-index: 1100;
+}
+.hamburger span {
+  width: 28px; height: 3px; background: #fff; border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+/* Animação do hamburger para X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px,-7px);
+}
+
+/* Overlay escurecendo fundo ao abrir menu mobile */
+.nav-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.nav-overlay.open { display: block; }
+
+/* Menu mobile: lateral, oculto por padrão, aparece ao abrir */
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav-list {
+    position: fixed; top: 0; right: -100%;
+    flex-direction: column; background: #162447;
+    width: 80vw; max-width: 320px; height: 100vh;
+    padding: 4rem 1.5rem; gap: 1.5rem;
+    transition: right var(--transition); z-index: 1050;
+  }
+  .nav-list.open { right: 0; }
+
+  /* Perfil no menu mobile: imagem e nome à esquerda */
+  .profile-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    gap: 1rem;
+  }
+  .profile-pic {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0;
+    border: 2px solid #fff;
+  }
+  .profile-name {
+    color: #fff;
+    font-weight: 1900;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+}
+
+/* HERO: ocupa tela inteira, centraliza conteúdo */
+.hero-section {
+  height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; text-align: center;
+}
+/* Overlay escuro sutil sobre o hero */
+.hero-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.195);
+}
+/* Hero: imagem à esquerda, texto à direita no desktop */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  text-align: left;
+}
+.hero-img-col {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Foto de perfil grande e circular */
+.hero-profile-img {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0;
+  border: 4px solid var(--clr-primary);
+}
+.hero-text-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+/* Título e subtítulo grandes no hero */
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  color: rgba(255,255,255,0.8);
+}
+/* Ícone de scroll animado no hero */
+.scroll-down {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%); color: #fff;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-8px); }
+  60% { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* Seções: espaçamento, fundo levemente escuro e borda */
+.info-section {
+  padding: 4rem 0; background: rgba(0,0,0,0.4);
+  border-top: 3px solid rgba(255,255,255,0.12);
+}
+/* Seções claras alternadas */
+.info-section.bg-light {
+  background: rgba(27,42,71,0.8);
+}
+/* Título das seções */
+.info-section h2 {
+  font-size: 2rem; font-weight: 700;
+  color: var(--clr-primary); margin-bottom: 1.5rem;
+  text-shadow: 0 0 6px var(--clr-primary)88;
+}
+/* Texto e listas das seções */
+.info-section p,
+.info-section ul {
+  font-size: 1.125rem; line-height: 1.7; color: #ddd; margin-bottom: 2rem;
+}
+.info-section ul {
+  list-style: inside disc; margin-left: 1rem;
+}
+/* Fundo alternado para algumas seções */
+#about.info-section,
+#personal-projects.info-section,
+#languages.info-section {
+  background: rgba(0,0,0,0.4);
+}
+
+/* Habilidades: grid de badges */
+.skill-section { margin-bottom: 2rem; }
+.skill-section h3 {
+  font-size: 1.25rem; margin-bottom: 1rem; color: #fff; font-weight: 600;
+}
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.skill-item span {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+@media (max-width: 900px) {
+  .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Lista de idiomas */
+#languages ul {
+  list-style: inside disc; margin-left: 1rem;
+}
+
+/* Botões das redes sociais */
+.social-buttons { display: flex; gap: 1rem; }
+.btn-social {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0; border-radius: 8px; overflow: hidden;
+}
+.btn-social img {
+  display: block; max-height: 40px; width: auto;
+}
+
+/* Rodapé simples, centralizado e discreto */
+.footer {
+  background: #0c142b; text-align: center; padding: 1.5rem 0;
+  font-size: 0.9rem; color: #ccc;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .hero-title { font-size: 2.25rem; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .info-section { padding: 2rem 1rem; }
+}
+
+/* Hero em coluna e centralizado no mobile */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-img-col,
+  .hero-text-col {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-profile-img {
+    width: 260px;
+    height: 260px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}

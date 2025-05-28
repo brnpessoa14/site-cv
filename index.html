@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bruno Carvalho Pessoa</title>
+  <!-- Fonte Poppins do Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- CSS principal do site -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR: menu de navegação principal -->
+  <header class="header">
+    <nav class="nav container" aria-label="Menu principal">
+      <!-- Botão hamburger para menu mobile -->
+      <button
+        class="hamburger"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-list"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <!-- Lista de links do menu -->
+      <ul class="nav-list" id="menu-list">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#education">Educação</a></li>
+        <li><a href="#projects">Projetos Acadêmicos</a></li>
+        <li><a href="#personal-projects">Projetos Pessoais</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#languages">Idiomas</a></li>
+        <li><a href="#social">Redes Sociais</a></li>
+      </ul>
+    </nav>
+    <!-- Overlay para escurecer fundo ao abrir menu mobile -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+  <!-- HERO: seção de destaque com foto e apresentação -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content container">
+      <div class="hero-img-col">
+        <!-- Foto de perfil -->
+        <img
+          src="profile_picture.png"
+          alt="Foto de Perfil"
+          class="hero-profile-img"
+        />
+      </div>
+      <div class="hero-text-col">
+        <!-- Nome e subtítulo -->
+        <h1 class="hero-title">Bruno Carvalho Pessoa</h1>
+        <p class="hero-subtitle">
+          Desenvolvedor Full Stack &amp; Entusiasta de Dados
+        </p>
+      </div>
+    </div>
+    <!-- Ícone para rolar para a próxima seção -->
+    <a href="#about" class="scroll-down" aria-label="Descer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+      </svg>
+    </a>
+  </section>
+
+  <main>
+    <!-- SOBRE: breve apresentação -->
+    <section id="about" class="info-section bg-light">
+      <div class="container">
+        <h2>Sobre Mim</h2>
+        <p>
+          Estudante de Engenharia de Software com conhecimento em desenvolvimento
+          full stack e análise de dados. Busco aplicar e expandir meus conhecimentos
+          em programação, estruturas de dados e desenvolvimento de software em
+          projetos desafiadores.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCAÇÃO: formação acadêmica -->
+    <section id="education" class="info-section">
+      <div class="container">
+        <h2>Educação</h2>
+        <ul>
+          <li>
+            <strong>IBMEC: </strong>Graduação em Engenharia de Software (2025.1 – ...)
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJETOS ACADÊMICOS: projetos realizados na faculdade -->
+    <section id="projects" class="info-section">
+      <div class="container">
+        <h2>Projetos Acadêmicos</h2>
+        <ul>
+          <li>
+            Criação e manutenção de projetos full stack utilizando Python, SQL,
+            HTML e CSS.
+          </li>
+          <li>
+            Aplicação de conceitos de estruturas de dados, algoritmos e boas práticas
+            de programação.
+          </li>
+          <li>
+            Participação no Apple Swift Student Challenge, com app voltado para
+            alfabetização tecnológica.
+          </li>
+          <li>
+            Imersão no Vale do Silício focada em Inteligência Artificial e suas
+            aplicações no mercado.
+          </li>
+          <li>
+            Repositórios no GitHub:
+            <a
+              href="https://github.com/brnpessoa14?tab=repositories"
+              target="_blank"
+              class="repo-link"
+            >github.com/brnpessoa14</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJETOS PESSOAIS: experiências e iniciativas pessoais -->
+    <section id="personal-projects" class="info-section bg-light">
+      <div class="container">
+        <h2>Projetos Pessoais</h2>
+        <ul>
+          <li>
+            Projeto “Acolha uma Criança”: três dias de apadrinhamento em orfanato
+            com atividades educativas.
+          </li>
+          <li>
+            Reforma de área de lazer em escola pública, contribuindo para bem-estar
+            dos alunos.
+          </li>
+          <li>
+            Campeão em competições de futebol/futsal, natação e tênis de mesa pela
+            equipe escolar.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS E STACKS: habilidades técnicas e tecnologias -->
+    <section id="skills" class="info-section">
+      <div class="container">
+        <h2>Skills &amp; Stacks</h2>
+        <div class="skill-grid">
+          <!-- Primeira linha: 6 skills -->
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+              width="48" height="48"
+            />
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              width="48" height="48"
+            />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TypeScript"
+              width="48" height="48"
+            />
+            <span>TypeScript</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+              alt="Swift"
+              width="48" height="48"
+            />
+            <span>Swift</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"
+              width="48" height="48"
+            />
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="github-dark.png"
+              alt="GitHub"
+              width="48" height="48"
+            />
+            <span>GitHub</span>
+          </div>
+          <!-- Segunda linha: 6 stacks -->
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5"
+              width="48" height="48"
+            />
+            <span>HTML5</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS3"
+              width="48" height="48"
+            />
+            <span>CSS3</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              alt="React"
+              width="48" height="48"
+            />
+            <span>React</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+              width="48" height="48"
+            />
+            <span>Node.js</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+              alt="SQL Server"
+              width="48" height="48"
+            />
+            <span>SQL Server</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/power-bi.png"
+              alt="Power BI"
+              width="48" height="48"
+            />
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDIOMAS: idiomas falados -->
+    <section id="languages" class="info-section bg-light">
+      <div class="container">
+        <h2>Idiomas</h2>
+        <ul>
+          <li>Português (Nativo)</li>
+          <li>Inglês (Fluente)</li>
+          <li>Espanhol (Básico)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- REDES SOCIAIS: links para perfis -->
+    <section id="social" class="info-section">
+      <div class="container">
+        <h2>Redes Sociais</h2>
+        <div class="social-buttons">
+          <a
+            href="https://linkedin.com/in/bruno-carvalho-pessoa"
+            target="_blank"
+            class="btn-social"
+          >
+            <img
+              src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+              alt="LinkedIn"
+            />
+          </a>
+          <a
+            href="https://github.com/brnpessoa14"
+            target="_blank"
+            class="btn-social"
+          >
+            <img
+              src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+              alt="GitHub"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: informações finais -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 | Bruno Carvalho Pessoa</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile: abre/fecha ao clicar no hamburger ou overlay
+    const btn = document.querySelector('.hamburger');
+    const nav = document.getElementById('menu-list');
+    const overlay = document.querySelector('.nav-overlay');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !exp);
+      btn.classList.toggle('active');
+      nav.classList.toggle('open');
+      overlay.classList.toggle('open');
+    });
+    overlay.addEventListener('click', () => btn.click());
+  </script>
+</body>
+</html>
